@@ -1,0 +1,1 @@
+"""Utilitare și constante partajate"""
