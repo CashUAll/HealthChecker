@@ -1,1 +1,0 @@
-"""HealthChecker - Sursa principală a aplicației"""
