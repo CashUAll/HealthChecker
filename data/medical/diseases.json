@@ -1,0 +1,138 @@
+{
+  "diseases": [
+    {
+      "id": 1,
+      "name": "Gripă",
+      "icd10": "J11",
+      "specialty": "Boli Infecțioase",
+      "severity": 2,
+      "symptoms": {
+        "febra": 0.9,
+        "tuse": 0.8,
+        "dureri_cap": 0.7,
+        "dureri_gat": 0.6,
+        "oboseala": 0.8,
+        "dureri_musculare": 0.7
+      }
+    },
+    {
+      "id": 2,
+      "name": "Răceală comună",
+      "icd10": "J00",
+      "specialty": "ORL",
+      "severity": 1,
+      "symptoms": {
+        "nas_infundat": 0.9,
+        "stranut": 0.8,
+        "dureri_gat": 0.7,
+        "tuse": 0.5
+      }
+    },
+    {
+      "id": 3,
+      "name": "COVID-19",
+      "icd10": "U07.1",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "symptoms": {
+        "febra": 0.8,
+        "tuse": 0.8,
+        "oboseala": 0.7,
+        "dureri_musculare": 0.6,
+        "dureri_cap": 0.5,
+        "dificultati_respiratie": 0.6
+      }
+    },
+    {
+      "id": 4,
+      "name": "Gastrită",
+      "icd10": "K29",
+      "specialty": "Gastroenterologie",
+      "severity": 2,
+      "symptoms": {
+        "dureri_abdominale": 0.8,
+        "greață": 0.7,
+        "pierderea_poftei_mancare": 0.6,
+        "oboseala": 0.3
+      }
+    },
+    {
+      "id": 5,
+      "name": "Migrenă",
+      "icd10": "G43",
+      "specialty": "Neurologie",
+      "severity": 2,
+      "symptoms": {
+        "dureri_cap": 0.9,
+        "greață": 0.6,
+        "ameteli": 0.5,
+        "oboseala": 0.4
+      }
+    },
+    {
+      "id": 6,
+      "name": "Sinusită",
+      "icd10": "J01",
+      "specialty": "ORL",
+      "severity": 2,
+      "symptoms": {
+        "dureri_cap": 0.8,
+        "nas_infundat": 0.9,
+        "dureri_gat": 0.5,
+        "febra": 0.4,
+        "oboseala": 0.4
+      }
+    },
+    {
+      "id": 7,
+      "name": "Bronșită",
+      "icd10": "J20",
+      "specialty": "Pneumologie",
+      "severity": 3,
+      "symptoms": {
+        "tuse": 0.9,
+        "febra": 0.6,
+        "oboseala": 0.7,
+        "dificultati_respiratie": 0.7,
+        "dureri_gat": 0.4
+      }
+    },
+    {
+      "id": 8,
+      "name": "Faringită",
+      "icd10": "J02",
+      "specialty": "ORL",
+      "severity": 2,
+      "symptoms": {
+        "dureri_gat": 0.9,
+        "febra": 0.6,
+        "tuse": 0.5,
+        "oboseala": 0.4
+      }
+    },
+    {
+      "id": 9,
+      "name": "Infecție urinară",
+      "icd10": "N39.0",
+      "specialty": "Urologie",
+      "severity": 2,
+      "symptoms": {
+        "febra": 0.5,
+        "dureri_abdominale": 0.6,
+        "oboseala": 0.4
+      }
+    },
+    {
+      "id": 10,
+      "name": "Alergie sezonieră",
+      "icd10": "J30.2",
+      "specialty": "Alergologie",
+      "severity": 1,
+      "symptoms": {
+        "nas_infundat": 0.8,
+        "stranut": 0.9,
+        "oboseala": 0.3
+      }
+    }
+  ]
+}
