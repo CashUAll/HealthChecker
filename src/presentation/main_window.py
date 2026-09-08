@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
 
         # Stare utilizator
         self.user_age = 0
-        self.user_sex = None  # 'male' sau 'female'
+        self.user_sex = None
         self.user_symptoms = []
         self.current_question_index = 0
         self.questions = []
@@ -97,9 +97,15 @@ class MainWindow(QMainWindow):
 
         sex_layout = QHBoxLayout()
         self.male_btn = QPushButton("🧑 Bărbat")
+        self.male_btn.setObjectName("male_button")
+        self.male_btn.setCheckable(True)
         self.male_btn.clicked.connect(lambda: self.set_sex('male'))
+
         self.female_btn = QPushButton("👩 Femeie")
+        self.female_btn.setObjectName("female_button")
+        self.female_btn.setCheckable(True)
         self.female_btn.clicked.connect(lambda: self.set_sex('female'))
+
         sex_layout.addWidget(self.male_btn)
         sex_layout.addWidget(self.female_btn)
         demo_layout.addLayout(sex_layout)
@@ -149,12 +155,13 @@ class MainWindow(QMainWindow):
         self.start_btn.clicked.connect(self.start_quiz)
         question_layout.addWidget(self.start_btn, alignment=Qt.AlignCenter)
 
-        self.yes_btn = QPushButton("✓ Da")
+        self.yes_btn = QPushButton("✅ Da")
+        self.yes_btn.setObjectName("yes_button")
         self.yes_btn.clicked.connect(lambda: self.answer_question(True))
         self.yes_btn.hide()
         question_layout.addWidget(self.yes_btn, alignment=Qt.AlignCenter)
 
-        self.no_btn = QPushButton("✗ Nu")
+        self.no_btn = QPushButton("❌ Nu")
         self.no_btn.setObjectName("no_button")
         self.no_btn.clicked.connect(lambda: self.answer_question(False))
         self.no_btn.hide()
@@ -177,34 +184,112 @@ class MainWindow(QMainWindow):
             }
             QLabel#question {
                 color: #cdd6f4;
-                font-size: 18px;
-                padding: 10px;
+                font-size: 20px;
+                padding: 15px;
+                background-color: #1e1e2e;
+                border-radius: 10px;
             }
             QFrame#card {
                 background-color: #313244;
-                border-radius: 12px;
-                padding: 20px;
+                border-radius: 15px;
+                padding: 25px;
             }
             QPushButton {
-                background-color: #89b4fa;
-                color: #1e1e2e;
+                background-color: #45475a;
+                color: #cdd6f4;
                 font-size: 16px;
                 font-weight: bold;
-                padding: 12px 30px;
-                border-radius: 8px;
-                min-width: 200px;
+                padding: 14px 30px;
+                border-radius: 10px;
+                min-width: 180px;
+                border: 2px solid #45475a;
             }
-            QPushButton:hover { background-color: #b4befe; }
+            QPushButton:hover {
+                background-color: #585b70;
+                border-color: #585b70;
+            }
+            QPushButton#yes_button {
+                background-color: #a6e3a1;
+                color: #1e1e2e;
+                border-color: #a6e3a1;
+                font-size: 18px;
+                padding: 16px 40px;
+            }
+            QPushButton#yes_button:hover {
+                background-color: #89b4fa;
+                border-color: #89b4fa;
+            }
             QPushButton#no_button {
                 background-color: #f38ba8;
+                color: #1e1e2e;
+                border-color: #f38ba8;
+                font-size: 18px;
+                padding: 16px 40px;
             }
-            QPushButton#no_button:hover { background-color: #fab387; }
+            QPushButton#no_button:hover {
+                background-color: #fab387;
+                border-color: #fab387;
+            }
             QPushButton#start_button {
                 background-color: #a6e3a1;
-                font-size: 18px;
-                padding: 15px 40px;
+                color: #1e1e2e;
+                font-size: 20px;
+                padding: 18px 50px;
+                border-color: #a6e3a1;
             }
-            QPushButton#start_button:hover { background-color: #89b4fa; }
+            QPushButton#start_button:hover {
+                background-color: #89b4fa;
+                border-color: #89b4fa;
+            }
+            QPushButton#male_button {
+                background-color: #45475a;
+                color: #cdd6f4;
+                font-size: 16px;
+                padding: 14px 30px;
+                border-radius: 10px;
+                min-width: 150px;
+                border: 2px solid #45475a;
+            }
+            QPushButton#male_button:hover {
+                background-color: #585b70;
+                border-color: #585b70;
+            }
+            QPushButton#female_button {
+                background-color: #45475a;
+                color: #cdd6f4;
+                font-size: 16px;
+                padding: 14px 30px;
+                border-radius: 10px;
+                min-width: 150px;
+                border: 2px solid #45475a;
+            }
+            QPushButton#female_button:hover {
+                background-color: #585b70;
+                border-color: #585b70;
+            }
+            QLineEdit {
+                background-color: #1e1e2e;
+                color: #cdd6f4;
+                border: 2px solid #45475a;
+                border-radius: 10px;
+                padding: 12px;
+                font-size: 16px;
+            }
+            QLineEdit:focus {
+                border-color: #89b4fa;
+            }
+            QProgressBar {
+                background-color: #1e1e2e;
+                border-radius: 10px;
+                height: 14px;
+                text-align: center;
+                color: #cdd6f4;
+                font-weight: bold;
+            }
+            QProgressBar::chunk {
+                background-color: #89b4fa;
+                border-radius: 10px;
+            }
         """)
 
     def set_sex(self, sex):
@@ -213,11 +298,31 @@ class MainWindow(QMainWindow):
         # Resetare stiluri
         self.male_btn.setStyleSheet("")
         self.female_btn.setStyleSheet("")
-        # Evidențiază butonul selectat
+        # Setează stilurile pentru butonul selectat
         if sex == 'male':
-            self.male_btn.setStyleSheet("background-color: #89b4fa; border: 2px solid #89b4fa;")
+            self.male_btn.setStyleSheet("""
+                background-color: #89b4fa;
+                color: #1e1e2e;
+                border: 2px solid #89b4fa;
+                font-weight: bold;
+            """)
+            self.female_btn.setStyleSheet("""
+                background-color: #45475a;
+                color: #cdd6f4;
+                border: 2px solid #45475a;
+            """)
         else:
-            self.female_btn.setStyleSheet("background-color: #f38ba8; border: 2px solid #f38ba8;")
+            self.female_btn.setStyleSheet("""
+                background-color: #f38ba8;
+                color: #1e1e2e;
+                border: 2px solid #f38ba8;
+                font-weight: bold;
+            """)
+            self.male_btn.setStyleSheet("""
+                background-color: #45475a;
+                color: #cdd6f4;
+                border: 2px solid #45475a;
+            """)
 
     def start_quiz(self):
         """Pornește quiz-ul după confirmarea datelor demografice."""
@@ -238,6 +343,10 @@ class MainWindow(QMainWindow):
 
         # Setează datele demografice în serviciu
         self.disease_service.set_user_demographics(self.user_age, self.user_sex)
+
+        # Mesaj de confirmare
+        sex_text = "bărbat" if self.user_sex == 'male' else "femeie"
+        self.question_label.setText(f"✅ Vârsta: {self.user_age} ani, Sex: {sex_text}\n\nÎncepem evaluarea...")
 
         # Ascunde ecranul demografic și pornește quiz-ul
         self.demographic_widget.hide()
