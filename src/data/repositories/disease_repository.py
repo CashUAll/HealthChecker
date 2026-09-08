@@ -33,7 +33,9 @@ class DiseaseRepository:
                     symptoms=item.get("symptoms", {}),
                     icd10_code=item.get("icd10", ""),
                     severity=item.get("severity", 1),
-                    description=item.get("description", None)
+                    description=item.get("description", None),
+                    age_groups=item.get("age_groups", ["child", "teen", "adult", "elderly"]),
+                    sex_specific=item.get("sex_specific", "both")
                 )
                 self._diseases.append(disease)
 
@@ -48,13 +50,17 @@ class DiseaseRepository:
                 id=1,
                 name="Gripă",
                 specialty="Boli Infecțioase",
-                symptoms={"febra": 0.9, "tuse": 0.8, "dureri_cap": 0.7, "oboseala": 0.8}
+                symptoms={"febra": 0.9, "tuse": 0.8, "dureri_cap": 0.7, "oboseala": 0.8},
+                age_groups=["child", "teen", "adult", "elderly"],
+                sex_specific="both"
             ),
             Disease(
                 id=2,
                 name="Răceală comună",
                 specialty="ORL",
-                symptoms={"nas_infundat": 0.9, "stranut": 0.8, "dureri_gat": 0.7}
+                symptoms={"nas_infundat": 0.9, "stranut": 0.8, "dureri_gat": 0.7},
+                age_groups=["child", "teen", "adult", "elderly"],
+                sex_specific="both"
             ),
         ]
 
@@ -68,3 +74,12 @@ class DiseaseRepository:
             if disease.id == disease_id:
                 return disease
         return None
+
+    def get_relevant_for(self, age: int, sex: str) -> List[Disease]:
+        """
+        Returnează doar bolile relevante pentru vârsta și sexul specificat.
+        """
+        return [
+            disease for disease in self._diseases
+            if disease.is_relevant_for(age, sex)
+        ]

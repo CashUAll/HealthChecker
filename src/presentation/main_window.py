@@ -1,7 +1,7 @@
 """Fereastra principală a aplicației"""
 from PySide6.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QLabel,
-    QPushButton, QFrame
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
+    QPushButton, QFrame, QLineEdit
 )
 from PySide6.QtCore import Qt
 
@@ -17,10 +17,14 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(APP_NAME)
         self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
 
+        # Servicii
         self.disease_service = DiseaseService()
         self.scoring_service = ScoringService()
         self.symptom_repo = SymptomRepository()
 
+        # Stare utilizator
+        self.user_age = 0
+        self.user_sex = None  # 'male' sau 'female'
         self.user_symptoms = []
         self.current_question_index = 0
         self.questions = []
@@ -29,51 +33,114 @@ class MainWindow(QMainWindow):
         self.apply_styles()
 
     def setup_ui(self):
+        """Configurează interfața"""
         central = QWidget()
         self.setCentralWidget(central)
         layout = QVBoxLayout(central)
         layout.setContentsMargins(30, 30, 30, 30)
         layout.setSpacing(15)
 
+        # Titlu
         title = QLabel("🏥 HealthChecker")
         title.setObjectName("title")
         title.setAlignment(Qt.AlignCenter)
         layout.addWidget(title)
 
+        # Subtitlu
         subtitle = QLabel("Identifică posibile afecțiuni pe baza simptomelor")
         subtitle.setObjectName("subtitle")
         subtitle.setAlignment(Qt.AlignCenter)
         layout.addWidget(subtitle)
 
+        # Card
         card = QFrame()
         card.setObjectName("card")
-        card_layout = QVBoxLayout(card)
-        card_layout.setSpacing(15)
+        self.card_layout = QVBoxLayout(card)
+        self.card_layout.setSpacing(15)
         layout.addWidget(card)
+
+        # ---------- ECRAIN DEMOGRAFIC ----------
+        self.demographic_widget = QWidget()
+        demo_layout = QVBoxLayout(self.demographic_widget)
+        demo_layout.setSpacing(10)
+
+        demo_title = QLabel("📋 Să începem! Spune-ne câteva detalii.")
+        demo_title.setObjectName("question")
+        demo_title.setAlignment(Qt.AlignCenter)
+        demo_layout.addWidget(demo_title)
+
+        # Câmp pentru vârstă
+        age_label = QLabel("Vârsta:")
+        age_label.setStyleSheet("color: #cdd6f4; font-size: 16px;")
+        demo_layout.addWidget(age_label)
+
+        self.age_input = QLineEdit()
+        self.age_input.setPlaceholderText("Exemplu: 25")
+        self.age_input.setStyleSheet("""
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            border: 1px solid #313244;
+        """)
+        demo_layout.addWidget(self.age_input)
+
+        # Selector pentru sex
+        sex_label = QLabel("Sexul:")
+        sex_label.setStyleSheet("color: #cdd6f4; font-size: 16px;")
+        demo_layout.addWidget(sex_label)
+
+        sex_layout = QHBoxLayout()
+        self.male_btn = QPushButton("🧑 Bărbat")
+        self.male_btn.clicked.connect(lambda: self.set_sex('male'))
+        self.female_btn = QPushButton("👩 Femeie")
+        self.female_btn.clicked.connect(lambda: self.set_sex('female'))
+        sex_layout.addWidget(self.male_btn)
+        sex_layout.addWidget(self.female_btn)
+        demo_layout.addLayout(sex_layout)
+
+        # Buton de confirmare
+        self.confirm_demo_btn = QPushButton("✅ Continuă")
+        self.confirm_demo_btn.setObjectName("start_button")
+        self.confirm_demo_btn.clicked.connect(self.start_quiz)
+        demo_layout.addWidget(self.confirm_demo_btn)
+
+        self.card_layout.addWidget(self.demographic_widget)
+
+        # ---------- ÎNTREBARE ----------
+        self.question_widget = QWidget()
+        self.question_widget.hide()
+        question_layout = QVBoxLayout(self.question_widget)
+        question_layout.setSpacing(15)
 
         self.question_label = QLabel("Apăsați Start pentru a începe")
         self.question_label.setObjectName("question")
         self.question_label.setAlignment(Qt.AlignCenter)
         self.question_label.setWordWrap(True)
-        card_layout.addWidget(self.question_label)
+        question_layout.addWidget(self.question_label)
 
+        # Butoane
         self.start_btn = QPushButton("🚀 Start")
         self.start_btn.setObjectName("start_button")
         self.start_btn.clicked.connect(self.start_quiz)
-        card_layout.addWidget(self.start_btn, alignment=Qt.AlignCenter)
+        question_layout.addWidget(self.start_btn, alignment=Qt.AlignCenter)
 
         self.yes_btn = QPushButton("✓ Da")
         self.yes_btn.clicked.connect(lambda: self.answer_question(True))
         self.yes_btn.hide()
-        card_layout.addWidget(self.yes_btn, alignment=Qt.AlignCenter)
+        question_layout.addWidget(self.yes_btn, alignment=Qt.AlignCenter)
 
         self.no_btn = QPushButton("✗ Nu")
         self.no_btn.setObjectName("no_button")
         self.no_btn.clicked.connect(lambda: self.answer_question(False))
         self.no_btn.hide()
-        card_layout.addWidget(self.no_btn, alignment=Qt.AlignCenter)
+        question_layout.addWidget(self.no_btn, alignment=Qt.AlignCenter)
+
+        self.card_layout.addWidget(self.question_widget)
 
     def apply_styles(self):
+        """Aplică stilurile"""
         self.setStyleSheet("""
             QMainWindow { background-color: #1e1e2e; }
             QLabel#title {
@@ -87,8 +154,8 @@ class MainWindow(QMainWindow):
             }
             QLabel#question {
                 color: #cdd6f4;
-                font-size: 20px;
-                padding: 20px;
+                font-size: 18px;
+                padding: 10px;
             }
             QFrame#card {
                 background-color: #313244;
@@ -114,9 +181,45 @@ class MainWindow(QMainWindow):
                 font-size: 18px;
                 padding: 15px 40px;
             }
+            QPushButton#start_button:hover { background-color: #89b4fa; }
         """)
 
+    def set_sex(self, sex):
+        """Setează sexul utilizatorului și evidențiază butonul selectat."""
+        self.user_sex = sex
+        # Resetare stiluri
+        self.male_btn.setStyleSheet("")
+        self.female_btn.setStyleSheet("")
+        # Evidențiază butonul selectat
+        if sex == 'male':
+            self.male_btn.setStyleSheet("background-color: #89b4fa; border: 2px solid #89b4fa;")
+        else:
+            self.female_btn.setStyleSheet("background-color: #f38ba8; border: 2px solid #f38ba8;")
+
     def start_quiz(self):
+        """Pornește quiz-ul după confirmarea datelor demografice."""
+        # Validare vârstă
+        try:
+            self.user_age = int(self.age_input.text())
+            if self.user_age < 1 or self.user_age > 120:
+                self.question_label.setText("⚠️ Vârsta trebuie să fie între 1 și 120.")
+                return
+        except ValueError:
+            self.question_label.setText("⚠️ Te rog să introduci o vârstă validă (număr).")
+            return
+
+        # Validare sex
+        if not self.user_sex:
+            self.question_label.setText("⚠️ Te rog să selectezi sexul.")
+            return
+
+        # Setează datele demografice în serviciu
+        self.disease_service.set_user_demographics(self.user_age, self.user_sex)
+
+        # Ascunde ecranul demografic și pornește quiz-ul
+        self.demographic_widget.hide()
+        self.question_widget.show()
+
         self.user_symptoms = []
         self.current_question_index = 0
         self.questions = self.symptom_repo.get_questions()
@@ -127,12 +230,14 @@ class MainWindow(QMainWindow):
         self.show_question()
 
     def show_question(self):
+        """Afișează următoarea întrebare"""
         if self.current_question_index < len(self.questions):
             self.question_label.setText(self.questions[self.current_question_index])
         else:
             self.show_results()
 
     def answer_question(self, answer: bool):
+        """Procesează răspunsul"""
         if answer and self.current_question_index < len(self.questions):
             from src.shared.helpers import extract_symptom_from_question
             question = self.questions[self.current_question_index]
@@ -143,6 +248,7 @@ class MainWindow(QMainWindow):
         self.show_question()
 
     def show_results(self):
+        """Afișează rezultatele"""
         self.yes_btn.hide()
         self.no_btn.hide()
 

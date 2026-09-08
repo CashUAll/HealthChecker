@@ -6,6 +6,8 @@
       "icd10": "J11",
       "specialty": "Boli Infecțioase",
       "severity": 2,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "febra": 0.9,
         "tuse": 0.8,
@@ -21,6 +23,8 @@
       "icd10": "J00",
       "specialty": "ORL",
       "severity": 1,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "nas_infundat": 0.9,
         "stranut": 0.8,
@@ -34,6 +38,8 @@
       "icd10": "U07.1",
       "specialty": "Boli Infecțioase",
       "severity": 3,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "febra": 0.8,
         "tuse": 0.8,
@@ -49,6 +55,8 @@
       "icd10": "K29",
       "specialty": "Gastroenterologie",
       "severity": 2,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "dureri_abdominale": 0.8,
         "greață": 0.7,
@@ -62,6 +70,8 @@
       "icd10": "G43",
       "specialty": "Neurologie",
       "severity": 2,
+      "age_groups": ["teen", "adult"],
+      "sex_specific": "both",
       "symptoms": {
         "dureri_cap": 0.9,
         "greață": 0.6,
@@ -75,6 +85,8 @@
       "icd10": "J01",
       "specialty": "ORL",
       "severity": 2,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "dureri_cap": 0.8,
         "nas_infundat": 0.9,
@@ -89,6 +101,8 @@
       "icd10": "J20",
       "specialty": "Pneumologie",
       "severity": 3,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "tuse": 0.9,
         "febra": 0.6,
@@ -103,6 +117,8 @@
       "icd10": "J02",
       "specialty": "ORL",
       "severity": 2,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "dureri_gat": 0.9,
         "febra": 0.6,
@@ -116,6 +132,8 @@
       "icd10": "N39.0",
       "specialty": "Urologie",
       "severity": 2,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "female",
       "symptoms": {
         "febra": 0.5,
         "dureri_abdominale": 0.6,
@@ -128,6 +146,8 @@
       "icd10": "J30.2",
       "specialty": "Alergologie",
       "severity": 1,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
       "symptoms": {
         "nas_infundat": 0.8,
         "stranut": 0.9,
