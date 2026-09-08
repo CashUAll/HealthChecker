@@ -2,23 +2,163 @@
   "diseases": [
     {
       "id": 1,
+      "name": "Alergie la ambrozie",
+      "icd10": "J30.1",
+      "specialty": "Alergologie",
+      "severity": 2,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "nas_infundat": 0.9,
+        "stranut": 0.9,
+        "mancarime_ochi": 0.8,
+        "oboseala": 0.4,
+        "dureri_cap": 0.3
+      },
+      "treatments": [
+        "Antihistaminice (Loratadină, Cetirizină)",
+        "Spray nazal cu corticosteroizi",
+        "Evitarea expunerii la polen"
+      ],
+      "recommendations": [
+        "Consult alergolog",
+        "Teste alergologice (prick test)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Alergie alimentară",
+      "icd10": "T78.0",
+      "specialty": "Alergologie",
+      "severity": 3,
+      "age_groups": ["child", "teen", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "urticarie": 0.9,
+        "mancarime": 0.8,
+        "greață": 0.7,
+        "dureri_abdominale": 0.6,
+        "diaree": 0.5,
+        "umflarea_buzelor": 0.7
+      },
+      "treatments": [
+        "Antihistaminice",
+        "Adrenalină auto-injectabilă (cazuri severe)",
+        "Evitarea alimentului alergen"
+      ],
+      "recommendations": [
+        "Consult alergolog",
+        "Teste de provocare alimentară"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Astm bronșic",
+      "icd10": "J45",
+      "specialty": "Pneumologie",
+      "severity": 4,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dificultati_respiratie": 0.9,
+        "tuse": 0.8,
+        "suflet": 0.8,
+        "oboseala": 0.7,
+        "strangere_piept": 0.7
+      },
+      "treatments": [
+        "Bronhodilatatoare inhalatorii (Salbutamol)",
+        "Corticosteroizi inhalatorii",
+        "Evitarea factorilor declanșatori"
+      ],
+      "recommendations": [
+        "Consult pneumolog",
+        "Teste de funcție respiratorie"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bronșită acută",
+      "icd10": "J20",
+      "specialty": "Pneumologie",
+      "severity": 3,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "tuse": 0.9,
+        "febra": 0.7,
+        "oboseala": 0.7,
+        "dificultati_respiratie": 0.6,
+        "durere_piept": 0.5
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Medicamente pentru tuse",
+        "Antibiotice (dacă este bacteriană)"
+      ],
+      "recommendations": [
+        "Consult medic de familie",
+        "Radiografie toracică (dacă este cazul)"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Pneumonie",
+      "icd10": "J18",
+      "specialty": "Pneumologie",
+      "severity": 5,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "tuse": 0.9,
+        "dificultati_respiratie": 0.8,
+        "durere_piept": 0.7,
+        "oboseala": 0.8,
+        "transpiratii": 0.6
+      },
+      "treatments": [
+        "Antibiotice",
+        "Antipiretice",
+        "Repaus",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Ugență medicală",
+        "Radiografie toracică",
+        "Analize de sânge"
+      ]
+    },
+    {
+      "id": 6,
       "name": "Gripă",
       "icd10": "J11",
       "specialty": "Boli Infecțioase",
-      "severity": 2,
+      "severity": 3,
       "age_groups": ["child", "teen", "adult", "elderly"],
       "sex_specific": "both",
       "symptoms": {
         "febra": 0.9,
         "tuse": 0.8,
-        "dureri_cap": 0.7,
-        "dureri_gat": 0.6,
+        "dureri_musculare": 0.8,
         "oboseala": 0.8,
-        "dureri_musculare": 0.7
-      }
+        "dureri_cap": 0.7,
+        "dureri_gat": 0.6
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice (Paracetamol, Ibuprofen)",
+        "Antivirale (în primele 48h)"
+      ],
+      "recommendations": [
+        "Consult medic de familie",
+        "Test rapid pentru gripă"
+      ]
     },
     {
-      "id": 2,
+      "id": 7,
       "name": "Răceală comună",
       "icd10": "J00",
       "specialty": "ORL",
@@ -27,89 +167,21 @@
       "sex_specific": "both",
       "symptoms": {
         "nas_infundat": 0.9,
-        "stranut": 0.8,
+        "stranut": 0.9,
         "dureri_gat": 0.7,
-        "tuse": 0.5
-      }
-    },
-    {
-      "id": 3,
-      "name": "COVID-19",
-      "icd10": "U07.1",
-      "specialty": "Boli Infecțioase",
-      "severity": 3,
-      "age_groups": ["child", "teen", "adult", "elderly"],
-      "sex_specific": "both",
-      "symptoms": {
-        "febra": 0.8,
-        "tuse": 0.8,
-        "oboseala": 0.7,
-        "dureri_musculare": 0.6,
-        "dureri_cap": 0.5,
-        "dificultati_respiratie": 0.6
-      }
-    },
-    {
-      "id": 4,
-      "name": "Gastrită",
-      "icd10": "K29",
-      "specialty": "Gastroenterologie",
-      "severity": 2,
-      "age_groups": ["adult", "elderly"],
-      "sex_specific": "both",
-      "symptoms": {
-        "dureri_abdominale": 0.8,
-        "greață": 0.7,
-        "pierderea_poftei_mancare": 0.6,
-        "oboseala": 0.3
-      }
-    },
-    {
-      "id": 5,
-      "name": "Migrenă",
-      "icd10": "G43",
-      "specialty": "Neurologie",
-      "severity": 2,
-      "age_groups": ["teen", "adult"],
-      "sex_specific": "both",
-      "symptoms": {
-        "dureri_cap": 0.9,
-        "greață": 0.6,
-        "ameteli": 0.5,
-        "oboseala": 0.4
-      }
-    },
-    {
-      "id": 6,
-      "name": "Sinusită",
-      "icd10": "J01",
-      "specialty": "ORL",
-      "severity": 2,
-      "age_groups": ["child", "teen", "adult", "elderly"],
-      "sex_specific": "both",
-      "symptoms": {
-        "dureri_cap": 0.8,
-        "nas_infundat": 0.9,
-        "dureri_gat": 0.5,
-        "febra": 0.4,
-        "oboseala": 0.4
-      }
-    },
-    {
-      "id": 7,
-      "name": "Bronșită",
-      "icd10": "J20",
-      "specialty": "Pneumologie",
-      "severity": 3,
-      "age_groups": ["child", "adult", "elderly"],
-      "sex_specific": "both",
-      "symptoms": {
-        "tuse": 0.9,
-        "febra": 0.6,
-        "oboseala": 0.7,
-        "dificultati_respiratie": 0.7,
-        "dureri_gat": 0.4
-      }
+        "tuse": 0.6,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Decongestionante nazale",
+        "Analgezice (Paracetamol)"
+      ],
+      "recommendations": [
+        "Consult medic de familie (dacă simptomele persistă)",
+        "Odihnă"
+      ]
     },
     {
       "id": 8,
@@ -121,38 +193,2365 @@
       "sex_specific": "both",
       "symptoms": {
         "dureri_gat": 0.9,
-        "febra": 0.6,
-        "tuse": 0.5,
-        "oboseala": 0.4
-      }
+        "febra": 0.7,
+        "dificultate_inghitire": 0.7,
+        "oboseala": 0.5,
+        "tuse": 0.4
+      },
+      "treatments": [
+        "Antibiotice (dacă este bacteriană)",
+        "Antipiretice",
+        "Gargară cu apă sărată",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult ORL",
+        "Test rapid pentru streptococ"
+      ]
     },
     {
       "id": 9,
+      "name": "Laringită",
+      "icd10": "J04",
+      "specialty": "ORL",
+      "severity": 2,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "raguseala": 0.9,
+        "tuse": 0.8,
+        "dureri_gat": 0.6,
+        "febra": 0.4,
+        "dificultate_vorbire": 0.7
+      },
+      "treatments": [
+        "Odihnă vocală",
+        "Hidratare",
+        "Inhalări cu abur",
+        "Antibiotice (dacă este cazul)"
+      ],
+      "recommendations": [
+        "Consult ORL",
+        "Evitarea iritanților (fum, alcool)"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Sinusită",
+      "icd10": "J01",
+      "specialty": "ORL",
+      "severity": 3,
+      "age_groups": ["teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_faciala": 0.9,
+        "nas_infundat": 0.8,
+        "dureri_cap": 0.7,
+        "febra": 0.6,
+        "secreții_nazale": 0.8
+      },
+      "treatments": [
+        "Antibiotice",
+        "Decongestionante",
+        "Spălături nazale",
+        "Antipiretice"
+      ],
+      "recommendations": [
+        "Consult ORL",
+        "Radiografie sinusuri"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Otită medie",
+      "icd10": "H66",
+      "specialty": "ORL",
+      "severity": 3,
+      "age_groups": ["child", "teen", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_ureche": 0.9,
+        "febra": 0.8,
+        "pierdere_auz": 0.7,
+        "oboseala": 0.6,
+        "iritabilitate": 0.7
+      },
+      "treatments": [
+        "Antibiotice",
+        "Analgezice",
+        "Picături pentru urechi"
+      ],
+      "recommendations": [
+        "Consult ORL",
+        "Otoscopie"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Migrenă",
+      "icd10": "G43",
+      "specialty": "Neurologie",
+      "severity": 4,
+      "age_groups": ["teen", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dureri_cap": 0.9,
+        "greață": 0.8,
+        "fotofobie": 0.8,
+        "ameteli": 0.6,
+        "aura": 0.5,
+        "oboseala": 0.7
+      },
+      "treatments": [
+        "Triptani (Sumatriptan)",
+        "Analgezice",
+        "Odihnă în cameră întunecată",
+        "Medicație profilactică"
+      ],
+      "recommendations": [
+        "Consult neurolog",
+        "Jurnal de cefalee"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cefalee de tensiune",
+      "icd10": "G44.2",
+      "specialty": "Neurologie",
+      "severity": 2,
+      "age_groups": ["teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dureri_cap": 0.9,
+        "tensiune_musculara": 0.7,
+        "oboseala": 0.5,
+        "durere_gat": 0.5
+      },
+      "treatments": [
+        "Analgezice (Paracetamol, Ibuprofen)",
+        "Relaxare",
+        "Masaj",
+        "Exerciții de stretching"
+      ],
+      "recommendations": [
+        "Consult neurolog (dacă este frecventă)",
+        "Managementul stresului"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Gastrită",
+      "icd10": "K29",
+      "specialty": "Gastroenterologie",
+      "severity": 2,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dureri_abdominale": 0.9,
+        "greață": 0.8,
+        "pierderea_poftei_mancare": 0.7,
+        "balonare": 0.6,
+        "arsuri": 0.5
+      },
+      "treatments": [
+        "Inhibitori ai pompei de protoni (Omeprazol)",
+        "Anti-acide",
+        "Dietă blândă",
+        "Evitarea alcoolului și a cafelei"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Endoscopie digestivă"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Ulcer gastric",
+      "icd10": "K25",
+      "specialty": "Gastroenterologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dureri_abdominale": 0.9,
+        "arsuri": 0.8,
+        "greață": 0.7,
+        "voma": 0.6,
+        "pierdere_in_greutate": 0.5
+      },
+      "treatments": [
+        "Inhibitori ai pompei de protoni",
+        "Antibiotice (dacă este H. pylori)",
+        "Anti-acide",
+        "Dietă"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Endoscopie digestivă",
+        "Test pentru H. pylori"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Gastroenterită",
+      "icd10": "A09",
+      "specialty": "Gastroenterologie",
+      "severity": 3,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "greață": 0.8,
+        "voma": 0.8,
+        "dureri_abdominale": 0.7,
+        "febra": 0.6,
+        "oboseala": 0.6
+      },
+      "treatments": [
+        "Hidratare (soluții de rehidratare)",
+        "Probiotice",
+        "Dietă ușoară",
+        "Antiemetice"
+      ],
+      "recommendations": [
+        "Consult medic de familie",
+        "Prevenirea deshidratării"
+      ]
+    },
+    {
+      "id": 17,
       "name": "Infecție urinară",
       "icd10": "N39.0",
+      "specialty": "Urologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "female",
+      "symptoms": {
+        "durere_urinar": 0.9,
+        "urina_frecventa": 0.8,
+        "urina_urgenta": 0.8,
+        "febra": 0.5,
+        "durere_pelvina": 0.6,
+        "urina_tulbure": 0.7
+      },
+      "treatments": [
+        "Antibiotice",
+        "Analgezice",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Consult urolog",
+        "Urocultură"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Cistită",
+      "icd10": "N30",
       "specialty": "Urologie",
       "severity": 2,
       "age_groups": ["adult", "elderly"],
       "sex_specific": "female",
       "symptoms": {
-        "febra": 0.5,
-        "dureri_abdominale": 0.6,
-        "oboseala": 0.4
-      }
+        "durere_urinar": 0.9,
+        "urina_frecventa": 0.8,
+        "urina_urgenta": 0.8,
+        "urina_sange": 0.4
+      },
+      "treatments": [
+        "Antibiotice",
+        "Analgezice",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Consult urolog",
+        "Urocultură"
+      ]
     },
     {
-      "id": 10,
-      "name": "Alergie sezonieră",
-      "icd10": "J30.2",
-      "specialty": "Alergologie",
-      "severity": 1,
+      "id": 19,
+      "name": "Prostatită",
+      "icd10": "N41",
+      "specialty": "Urologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "male",
+      "symptoms": {
+        "durere_pelvina": 0.9,
+        "durere_urinar": 0.8,
+        "urina_frecventa": 0.7,
+        "febra": 0.6,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Antibiotice",
+        "Antiinflamatoare",
+        "Analgezice"
+      ],
+      "recommendations": [
+        "Consult urolog",
+        "Examen urologic"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Anxietate generalizată",
+      "icd10": "F41.1",
+      "specialty": "Psihiatrie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "anxietate": 0.9,
+        "tensiune": 0.8,
+        "oboseala": 0.7,
+        "iritabilitate": 0.7,
+        "insomnie": 0.6,
+        "tahicardie": 0.6
+      },
+      "treatments": [
+        "Psihoterapie (CBT)",
+        "Antidepresive (SSRI)",
+        "Anxiolitice",
+        "Tehnici de relaxare"
+      ],
+      "recommendations": [
+        "Consult psihiatru",
+        "Psihoterapie"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Depresie",
+      "icd10": "F32",
+      "specialty": "Psihiatrie",
+      "severity": 4,
+      "age_groups": ["teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "tristete": 0.9,
+        "pierderea_interesului": 0.9,
+        "oboseala": 0.8,
+        "insomnie": 0.7,
+        "pierdere_in_greutate": 0.6,
+        "idei_suicidare": 0.5
+      },
+      "treatments": [
+        "Antidepresive (SSRI, SNRI)",
+        "Psihoterapie",
+        "Terapie electroconvulsivă (cazuri severe)"
+      ],
+      "recommendations": [
+        "Urgență psihiatrică (dacă sunt idei suicidare)",
+        "Consult psihiatru"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Insomnie",
+      "icd10": "G47.0",
+      "specialty": "Psihiatrie",
+      "severity": 2,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "insomnie": 0.9,
+        "oboseala": 0.8,
+        "iritabilitate": 0.7,
+        "anxietate": 0.6,
+        "dureri_cap": 0.4
+      },
+      "treatments": [
+        "Igiena somnului",
+        "Psihoterapie",
+        "Hipnotice (pe termen scurt)",
+        "Melatonină"
+      ],
+      "recommendations": [
+        "Consult psihiatru",
+        "Polisomnografie"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Hipertensiune arterială",
+      "icd10": "I10",
+      "specialty": "Cardiologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_cap": 0.6,
+        "ameteli": 0.5,
+        "oboseala": 0.4,
+        "tahicardie": 0.3,
+        "hemoragie_nazala": 0.3
+      },
+      "treatments": [
+        "Antihipertensive (ACEI, ARB)",
+        "Dietă săracă în sare",
+        "Exerciții fizice",
+        "Reducerea stresului"
+      ],
+      "recommendations": [
+        "Consult cardiolog",
+        "Monitorizarea tensiunii arteriale"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Insuficiență cardiacă",
+      "icd10": "I50",
+      "specialty": "Cardiologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.9,
+        "dificultati_respiratie": 0.9,
+        "edeme": 0.8,
+        "tuse": 0.6,
+        "tahicardie": 0.6
+      },
+      "treatments": [
+        "Diuretice",
+        "ACEI",
+        "Beta-blocante",
+        "Restricție de lichide"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Consult cardiolog",
+        "Ecografie cardiacă"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Angină pectorală",
+      "icd10": "I20",
+      "specialty": "Cardiologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_piept": 0.9,
+        "strangere_piept": 0.8,
+        "dificultati_respiratie": 0.7,
+        "oboseala": 0.6,
+        "greață": 0.4
+      },
+      "treatments": [
+        "Nitroglicerină",
+        "Beta-blocante",
+        "Aspirină",
+        "Revascularizare (dacă este cazul)"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Consult cardiolog",
+        "Electrocardiogramă"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Aritmie cardiacă",
+      "icd10": "I49",
+      "specialty": "Cardiologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "palpitatii": 0.9,
+        "ameteli": 0.7,
+        "oboseala": 0.6,
+        "dificultati_respiratie": 0.5,
+        "durere_piept": 0.4
+      },
+      "treatments": [
+        "Anti-aritmice",
+        "Beta-blocante",
+        "Ablatie (dacă este cazul)",
+        "Pacemaker"
+      ],
+      "recommendations": [
+        "Consult cardiolog",
+        "Electrocardiogramă (Holter)"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Diabet zaharat tip 2",
+      "icd10": "E11",
+      "specialty": "Endocrinologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "sete": 0.8,
+        "urina_frecventa": 0.8,
+        "oboseala": 0.7,
+        "pierdere_in_greutate": 0.5,
+        "vedere_tulbure": 0.5,
+        "vindecare_lenta": 0.4
+      },
+      "treatments": [
+        "Metformin",
+        "Dietă",
+        "Exerciții fizice",
+        "Insulină (dacă este cazul)"
+      ],
+      "recommendations": [
+        "Consult endocrinolog",
+        "Glicemie pe stomacul gol",
+        "HbA1c"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Hipotiroidism",
+      "icd10": "E03",
+      "specialty": "Endocrinologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.9,
+        "pierdere_in_greutate": 0.7,
+        "sensibilitate_frig": 0.7,
+        "constipatie": 0.6,
+        "uscarea_pielii": 0.6,
+        "caderea_parului": 0.5
+      },
+      "treatments": [
+        "Levotiroxină (înlocuire hormonală)",
+        "Monitorizare TSH"
+      ],
+      "recommendations": [
+        "Consult endocrinolog",
+        "Teste tiroidiene (TSH, T4)"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Hipertiroidism",
+      "icd10": "E05",
+      "specialty": "Endocrinologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "pierdere_in_greutate": 0.9,
+        "palpitatii": 0.8,
+        "tahicardie": 0.8,
+        "transpiratii": 0.7,
+        "anxietate": 0.7,
+        "oboseala": 0.6
+      },
+      "treatments": [
+        "Tioamide (Metimazol)",
+        "Beta-blocante",
+        "Iod radioactiv",
+        "Tiroidectomie"
+      ],
+      "recommendations": [
+        "Consult endocrinolog",
+        "Teste tiroidiene"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Osteoporoză",
+      "icd10": "M81",
+      "specialty": "Ortopedie",
+      "severity": 3,
+      "age_groups": ["elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_spate": 0.7,
+        "pierdere_inaltime": 0.6,
+        "fracturi": 0.5,
+        "postura_incovoiata": 0.4
+      },
+      "treatments": [
+        "Bifosfonați (Alendronat)",
+        "Calciu + Vitamina D",
+        "Exerciții fizice",
+        "Terapie hormonală (dacă este cazul)"
+      ],
+      "recommendations": [
+        "Consult ortoped",
+        "Densitometrie osoasă"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Artrită reumatoidă",
+      "icd10": "M05",
+      "specialty": "Reumatologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_articulare": 0.9,
+        "inflamatie_articulare": 0.8,
+        "rigiditate_dimineata": 0.8,
+        "oboseala": 0.7,
+        "febra": 0.4
+      },
+      "treatments": [
+        "AINS (Ibuprofen)",
+        "Corticosteroizi",
+        "DMARD (Metotrexat)",
+        "Terapie biologică"
+      ],
+      "recommendations": [
+        "Consult reumatolog",
+        "Analize de sânge (FR, anti-CCP)",
+        "Radiografii articulare"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Osteoartrită",
+      "icd10": "M16",
+      "specialty": "Ortopedie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_articulare": 0.9,
+        "rigiditate": 0.8,
+        "scartait": 0.6,
+        "umflare": 0.5
+      },
+      "treatments": [
+        "AINS (Ibuprofen)",
+        "Fizioterapie",
+        "Injectii intra-articulare",
+        "Protezare (dacă este cazul)"
+      ],
+      "recommendations": [
+        "Consult ortoped",
+        "Radiografii articulare"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Gută",
+      "icd10": "M10",
+      "specialty": "Reumatologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "male",
+      "symptoms": {
+        "durere_articulare": 0.9,
+        "umflare": 0.8,
+        "roseata": 0.7,
+        "febra": 0.5,
+        "durere_deget_mare": 0.9
+      },
+      "treatments": [
+        "AINS",
+        "Colchicină",
+        "Alopurinol",
+        "Dietă (evitarea alimentelor bogate în purine)"
+      ],
+      "recommendations": [
+        "Consult reumatolog",
+        "Analize de sânge (acid uric)"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Sciatică",
+      "icd10": "M54.3",
+      "specialty": "Ortopedie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_jos_spate": 0.9,
+        "durere_picior": 0.8,
+        "amortire_picior": 0.7,
+        "furnicaturi": 0.6,
+        "slabiciune_picior": 0.5
+      },
+      "treatments": [
+        "AINS (Ibuprofen)",
+        "Fizioterapie",
+        "Relaxante musculare",
+        "Injectii epidurale"
+      ],
+      "recommendations": [
+        "Consult ortoped",
+        "RMN",
+        "Tomografie"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Hernie de disc",
+      "icd10": "M51",
+      "specialty": "Ortopedie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_spate": 0.9,
+        "durere_picior": 0.8,
+        "amortire": 0.7,
+        "slabiciune_musculara": 0.6,
+        "furnicaturi": 0.6
+      },
+      "treatments": [
+        "AINS (Ibuprofen)",
+        "Fizioterapie",
+        "Relaxante musculare",
+        "Injectii epidurale",
+        "Intervenție chirurgicală"
+      ],
+      "recommendations": [
+        "Consult ortoped",
+        "RMN",
+        "Tomografie"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Conjunctivită",
+      "icd10": "H10",
+      "specialty": "Oftalmologie",
+      "severity": 2,
       "age_groups": ["child", "teen", "adult", "elderly"],
       "sex_specific": "both",
       "symptoms": {
-        "nas_infundat": 0.8,
-        "stranut": 0.9,
-        "oboseala": 0.3
-      }
+        "roseata_ochi": 0.9,
+        "mancarime_ochi": 0.8,
+        "lacrimare": 0.7,
+        "sensibilitate_lumina": 0.5,
+        "secreții_oculare": 0.7
+      },
+      "treatments": [
+        "Picături antibioticice",
+        "Picături antihistaminice",
+        "Comprese reci"
+      ],
+      "recommendations": [
+        "Consult oftalmolog",
+        "Evitarea contactului cu ochii"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Glaucom",
+      "icd10": "H40",
+      "specialty": "Oftalmologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_ochi": 0.7,
+        "vedere_tulbure": 0.7,
+        "pierdere_vedere": 0.6,
+        "greață": 0.5,
+        "voma": 0.4
+      },
+      "treatments": [
+        "Picături pentru scăderea presiunii",
+        "Laser",
+        "Intervenție chirurgicală"
+      ],
+      "recommendations": [
+        "Urgență oftalmologică",
+        "Măsurarea presiunii intraoculare"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Cataractă",
+      "icd10": "H25",
+      "specialty": "Oftalmologie",
+      "severity": 3,
+      "age_groups": ["elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "vedere_tulbure": 0.9,
+        "sensibilitate_lumina": 0.7,
+        "dificultate_vedere_noaptea": 0.7,
+        "pierdere_vedere": 0.6
+      },
+      "treatments": [
+        "Intervenție chirurgicală (înlăturare cataractă)",
+        "Lentile intraoculare"
+      ],
+      "recommendations": [
+        "Consult oftalmolog",
+        "Examen oftalmologic complet"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Infarct miocardic",
+      "icd10": "I21",
+      "specialty": "Cardiologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_piept": 0.9,
+        "strangere_piept": 0.9,
+        "dificultati_respiratie": 0.8,
+        "transpiratii": 0.8,
+        "greață": 0.7,
+        "ameteli": 0.6
+      },
+      "treatments": [
+        "Urgență medicală",
+        "Aspirină",
+        "Anticoagulante",
+        "Angioplastie",
+        "Stent"
+      ],
+      "recommendations": [
+        "Urgență medicală (112)",
+        "Electrocardiogramă",
+        "Analize de sânge (troponină)"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Accident vascular cerebral",
+      "icd10": "I64",
+      "specialty": "Neurologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "amortire_fata": 0.9,
+        "slabiciune_brat": 0.9,
+        "dificultate_vorbire": 0.9,
+        "dificultate_vedere": 0.7,
+        "dificultate_mers": 0.7,
+        "durere_cap_sever": 0.6
+      },
+      "treatments": [
+        "Urgență medicală",
+        "Tromboliză (în primele 4.5h)",
+        "Anticoagulante",
+        "Reabilitare"
+      ],
+      "recommendations": [
+        "Urgență medicală (112)",
+        "Tomografie",
+        "RMN"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Epilepsie",
+      "icd10": "G40",
+      "specialty": "Neurologie",
+      "severity": 4,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "convulsii": 0.9,
+        "pierdere_constiinta": 0.8,
+        "spasme_musculare": 0.8,
+        "confuzie": 0.6,
+        "ameteli": 0.5
+      },
+      "treatments": [
+        "Anticonvulsivante",
+        "Medicație pe termen lung",
+        "Intervenție chirurgicală (dacă este cazul)"
+      ],
+      "recommendations": [
+        "Consult neurolog",
+        "Electroencefalogramă (EEG)"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Scleroză multiplă",
+      "icd10": "G35",
+      "specialty": "Neurologie",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "slabiciune_picior": 0.7,
+        "amortire": 0.7,
+        "dificultate_vorbire": 0.6,
+        "dificultate_vedere": 0.6,
+        "dificultate_echilibru": 0.6
+      },
+      "treatments": [
+        "Corticosteroizi",
+        "Immunomodulatoare",
+        "Fizioterapie"
+      ],
+      "recommendations": [
+        "Consult neurolog",
+        "RMN"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Cancer pulmonar",
+      "icd10": "C34",
+      "specialty": "Oncologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "tuse": 0.9,
+        "dificultati_respiratie": 0.8,
+        "durere_piept": 0.7,
+        "pierdere_in_greutate": 0.7,
+        "oboseala": 0.7,
+        "hemoptizie": 0.6
+      },
+      "treatments": [
+        "Chimioterapie",
+        "Radioterapie",
+        "Intervenție chirurgicală",
+        "Terapie țintită"
+      ],
+      "recommendations": [
+        "Urgență oncologică",
+        "Tomografie",
+        "Bronhoscopie"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Cancer de sân",
+      "icd10": "C50",
+      "specialty": "Oncologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "female",
+      "symptoms": {
+        "nodul_sân": 0.9,
+        "durere_sân": 0.6,
+        "retractie_sân": 0.6,
+        "secreții_nip": 0.5,
+        "umflare_sân": 0.5
+      },
+      "treatments": [
+        "Intervenție chirurgicală",
+        "Chimioterapie",
+        "Radioterapie",
+        "Terapie hormonală"
+      ],
+      "recommendations": [
+        "Consult oncologic",
+        "Mamografie",
+        "Biopsie"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Cancer de colon",
+      "icd10": "C18",
+      "specialty": "Oncologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "sange_scaun": 0.8,
+        "dureri_abdominale": 0.7,
+        "pierdere_in_greutate": 0.7,
+        "oboseala": 0.6,
+        "scaune_ingerate": 0.6
+      },
+      "treatments": [
+        "Intervenție chirurgicală",
+        "Chimioterapie",
+        "Radioterapie"
+      ],
+      "recommendations": [
+        "Consult oncologic",
+        "Colonoscopie",
+        "Biopsie"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Leucemie",
+      "icd10": "C95",
+      "specialty": "Oncologie",
+      "severity": 5,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.9,
+        "febra": 0.7,
+        "pierdere_in_greutate": 0.7,
+        "infectii_frecvente": 0.6,
+        "hemoragii": 0.5,
+        "durere_oase": 0.5
+      },
+      "treatments": [
+        "Chimioterapie",
+        "Radioterapie",
+        "Transplant de măduvă osoasă"
+      ],
+      "recommendations": [
+        "Urgență oncologică",
+        "Analize de sânge (hemoleucograma)",
+        "Biopsie de măduvă"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Anemie feriprivă",
+      "icd10": "D50",
+      "specialty": "Hematologie",
+      "severity": 3,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.9,
+        "paloare": 0.8,
+        "ameteli": 0.7,
+        "tahicardie": 0.6,
+        "dureri_cap": 0.5
+      },
+      "treatments": [
+        "Suplimente de fier",
+        "Dietă bogată în fier",
+        "Vitamina C"
+      ],
+      "recommendations": [
+        "Consult hematolog",
+        "Analize de sânge (hemoleucograma, feritină)"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Anemie pernicioasă",
+      "icd10": "D51",
+      "specialty": "Hematologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "paloare": 0.7,
+        "ameteli": 0.6,
+        "furnicaturi": 0.5,
+        "dificultate_echilibru": 0.4
+      },
+      "treatments": [
+        "Vitamina B12 (injectii)",
+        "Suplimente orale de B12"
+      ],
+      "recommendations": [
+        "Consult hematolog",
+        "Analize de sânge (vitamina B12)"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Trombocitopenie",
+      "icd10": "D69",
+      "specialty": "Hematologie",
+      "severity": 4,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "hemoragii": 0.8,
+        "vânatai": 0.7,
+        "sange_nas": 0.6,
+        "sange_guma": 0.5,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Corticosteroizi",
+        "Imunoglobuline",
+        "Transfuzie trombocite"
+      ],
+      "recommendations": [
+        "Urgență hematologică",
+        "Analize de sânge (hemoleucograma)"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Hepatită B",
+      "icd10": "B16",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "febra": 0.7,
+        "durere_abdominala": 0.6,
+        "greata": 0.6,
+        "urina_închisă": 0.5,
+        "galben_ochi": 0.5
+      },
+      "treatments": [
+        "Antivirale",
+        "Repaus",
+        "Hidratare",
+        "Monitorizare"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Analize de sânge (HBsAg, anti-HBc)"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Hepatită C",
+      "icd10": "B17",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "febra": 0.6,
+        "durere_abdominala": 0.6,
+        "greata": 0.5,
+        "pierdere_in_greutate": 0.5
+      },
+      "treatments": [
+        "Antivirale (DAAs)",
+        "Monitorizare"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Analize de sânge (anti-HCV, ARN HCV)"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Infecție cu HIV",
+      "icd10": "B20",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.7,
+        "oboseala": 0.7,
+        "pierdere_in_greutate": 0.6,
+        "ganglioni": 0.6,
+        "diaree": 0.5
+      },
+      "treatments": [
+        "Terapie antiretrovirală",
+        "Monitorizare"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Test HIV"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Tuberculoză",
+      "icd10": "A15",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "tuse": 0.9,
+        "febra": 0.8,
+        "pierdere_in_greutate": 0.7,
+        "transpiratii": 0.7,
+        "oboseala": 0.7,
+        "hemoptizie": 0.5
+      },
+      "treatments": [
+        "Antibiotice (Rifampicină, Isoniazidă)",
+        "Monitorizare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Radiografie toracică",
+        "Test tuberculină"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Malarie",
+      "icd10": "B50",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "frisoane": 0.8,
+        "transpiratii": 0.8,
+        "dureri_cap": 0.7,
+        "oboseala": 0.7,
+        "durere_abdominala": 0.5
+      },
+      "treatments": [
+        "Antimalarice (Artemisinin)",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Test pentru malarie"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Dengue",
+      "icd10": "A90",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "dureri_cap": 0.8,
+        "durere_articulare": 0.7,
+        "durere_musculare": 0.7,
+        "erupții": 0.6,
+        "voma": 0.5
+      },
+      "treatments": [
+        "Hidratare",
+        "Analgezice",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Test pentru dengue"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Febră tifoidă",
+      "icd10": "A01",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "dureri_cap": 0.7,
+        "durere_abdominala": 0.7,
+        "oboseala": 0.7,
+        "constipatie": 0.5,
+        "diaree": 0.4
+      },
+      "treatments": [
+        "Antibiotice (Ciprofloxacină)",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Hemocultură"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Rujeolă",
+      "icd10": "B05",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["child"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "tuse": 0.8,
+        "erupții": 0.8,
+        "dureri_gat": 0.7,
+        "oboseala": 0.7,
+        "sangerare_ochi": 0.6
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Vaccinare"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Varicelă",
+      "icd10": "B01",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child"],
+      "sex_specific": "both",
+      "symptoms": {
+        "erupții": 0.9,
+        "mancarime": 0.8,
+        "febra": 0.7,
+        "oboseala": 0.6,
+        "dureri_cap": 0.5
+      },
+      "treatments": [
+        "Antihistaminice",
+        "Antipiretice",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult medic de familie",
+        "Vaccinare"
+      ]
+    },
+    {
+      "id": 59,
+      "name": "COVID-19",
+      "icd10": "U07.1",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "tuse": 0.8,
+        "oboseala": 0.7,
+        "pierdere_miros": 0.7,
+        "pierdere_gust": 0.6,
+        "dureri_musculare": 0.6,
+        "dificultati_respiratie": 0.5
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice",
+        "Antivirale (în cazuri severe)"
+      ],
+      "recommendations": [
+        "Consult medic de familie",
+        "Test COVID-19"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Infecție cu streptococ",
+      "icd10": "A49.1",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "teen", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_gat": 0.8,
+        "ganglioni": 0.7,
+        "dificultate_inghitire": 0.7,
+        "erupții": 0.5
+      },
+      "treatments": [
+        "Antibiotice (Penicilină)",
+        "Antipiretice",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult medic de familie",
+        "Test rapid pentru streptococ"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Pneumonie atipică",
+      "icd10": "J18.9",
+      "specialty": "Pneumologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "tuse": 0.8,
+        "febra": 0.7,
+        "oboseala": 0.7,
+        "dificultati_respiratie": 0.6,
+        "durere_piept": 0.5,
+        "transpiratii": 0.5
+      },
+      "treatments": [
+        "Antibiotice (Macrolide)",
+        "Repaus",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Consult pneumolog",
+        "Radiografie toracică"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Astm alergic",
+      "icd10": "J45.0",
+      "specialty": "Pneumologie",
+      "severity": 4,
+      "age_groups": ["child", "teen", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dificultati_respiratie": 0.8,
+        "suflet": 0.7,
+        "tuse": 0.7,
+        "strangere_piept": 0.6,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Bronhodilatatoare inhalatorii",
+        "Corticosteroizi inhalatorii",
+        "Evitarea alergenilor"
+      ],
+      "recommendations": [
+        "Consult pneumolog",
+        "Teste de alergie"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Bronșită cronică",
+      "icd10": "J42",
+      "specialty": "Pneumologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "tuse": 0.9,
+        "flegma": 0.8,
+        "dificultati_respiratie": 0.6,
+        "oboseala": 0.5,
+        "durere_piept": 0.4
+      },
+      "treatments": [
+        "Bronhodilatatoare",
+        "Corticosteroizi",
+        "Evitarea fumatului",
+        "Reabilitare pulmonară"
+      ],
+      "recommendations": [
+        "Consult pneumolog",
+        "Teste de funcție respiratorie"
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Emfizem pulmonar",
+      "icd10": "J43",
+      "specialty": "Pneumologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dificultati_respiratie": 0.9,
+        "oboseala": 0.7,
+        "tuse": 0.6,
+        "flegma": 0.5,
+        "pierdere_in_greutate": 0.5
+      },
+      "treatments": [
+        "Bronhodilatatoare",
+        "Corticosteroizi",
+        "Oxigenoterapie",
+        "Reabilitare pulmonară",
+        "Evitarea fumatului"
+      ],
+      "recommendations": [
+        "Consult pneumolog",
+        "Teste de funcție respiratorie"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Pneumonie interstitială",
+      "icd10": "J84",
+      "specialty": "Pneumologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dificultati_respiratie": 0.8,
+        "tuse": 0.7,
+        "oboseala": 0.7,
+        "durere_piept": 0.5,
+        "pierdere_in_greutate": 0.4
+      },
+      "treatments": [
+        "Corticosteroizi",
+        "Immunosupresoare",
+        "Oxigenoterapie",
+        "Reabilitare pulmonară"
+      ],
+      "recommendations": [
+        "Consult pneumolog",
+        "Tomografie"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Pancreatită acută",
+      "icd10": "K85",
+      "specialty": "Gastroenterologie",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_abdominala_sever": 0.9,
+        "greata": 0.8,
+        "voma": 0.7,
+        "febra": 0.6,
+        "tahicardie": 0.5
+      },
+      "treatments": [
+        "Urgență medicală",
+        "Hidratare",
+        "Analgezice",
+        "Dietă"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Analize de sânge (amilază, lipază)",
+        "Tomografie"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Colecistită",
+      "icd10": "K81",
+      "specialty": "Gastroenterologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_abdominala": 0.9,
+        "febra": 0.7,
+        "greata": 0.6,
+        "voma": 0.5,
+        "balonare": 0.4
+      },
+      "treatments": [
+        "Antibiotice",
+        "Analgezice",
+        "Intervenție chirurgicală"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Ecografie"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Colită ulcerativă",
+      "icd10": "K51",
+      "specialty": "Gastroenterologie",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "sange_scaun": 0.8,
+        "dureri_abdominale": 0.8,
+        "oboseala": 0.6,
+        "pierdere_in_greutate": 0.5
+      },
+      "treatments": [
+        "Aminosalicilat",
+        "Corticosteroizi",
+        "Immunosupresoare",
+        "Intervenție chirurgicală"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Colonoscopie",
+        "Biopsie"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Boala Crohn",
+      "icd10": "K50",
+      "specialty": "Gastroenterologie",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "dureri_abdominale": 0.8,
+        "oboseala": 0.7,
+        "pierdere_in_greutate": 0.7,
+        "febra": 0.5,
+        "sange_scaun": 0.5
+      },
+      "treatments": [
+        "Aminosalicilat",
+        "Corticosteroizi",
+        "Immunosupresoare",
+        "Terapie biologică"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Colonoscopie",
+        "Biopsie"
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Sindrom de intestin iritabil",
+      "icd10": "K58",
+      "specialty": "Gastroenterologie",
+      "severity": 2,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dureri_abdominale": 0.9,
+        "balonare": 0.8,
+        "diaree": 0.7,
+        "constipatie": 0.6,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Dietă (FODMAP)",
+        "Probiotice",
+        "Antispastice",
+        "Managementul stresului"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Dietă și stil de viață"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Constipație cronică",
+      "icd10": "K59",
+      "specialty": "Gastroenterologie",
+      "severity": 2,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "constipatie": 0.9,
+        "balonare": 0.7,
+        "durere_abdominala": 0.6,
+        "oboseala": 0.4
+      },
+      "treatments": [
+        "Fibre alimentare",
+        "Hidratare",
+        "Laxative",
+        "Exerciții fizice"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Dietă și stil de viață"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Infecție cu Helicobacter pylori",
+      "icd10": "B96.81",
+      "specialty": "Gastroenterologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "dureri_abdominale": 0.8,
+        "arsuri": 0.7,
+        "balonare": 0.6,
+        "greata": 0.5,
+        "pierdere_in_greutate": 0.4
+      },
+      "treatments": [
+        "Antibiotice",
+        "Inhibitori ai pompei de protoni"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Test pentru H. pylori"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Hernie hiatală",
+      "icd10": "K44",
+      "specialty": "Gastroenterologie",
+      "severity": 3,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "arsuri": 0.9,
+        "durere_piept": 0.7,
+        "dificultate_inghitire": 0.6,
+        "greata": 0.5,
+        "balonare": 0.4
+      },
+      "treatments": [
+        "Inhibitori ai pompei de protoni",
+        "Dietă",
+        "Intervenție chirurgicală"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Endoscopie"
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Pancreatită cronică",
+      "icd10": "K86",
+      "specialty": "Gastroenterologie",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "durere_abdominala": 0.9,
+        "pierdere_in_greutate": 0.7,
+        "diaree": 0.6,
+        "greata": 0.5,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Analgezice",
+        "Enzime pancreatice",
+        "Dietă",
+        "Intervenție chirurgicală"
+      ],
+      "recommendations": [
+        "Consult gastroenterolog",
+        "Tomografie"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Hepatită A",
+      "icd10": "B15",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "febra": 0.6,
+        "greata": 0.6,
+        "durere_abdominala": 0.5,
+        "galben_ochi": 0.5
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Dietă"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Analize de sânge (anti-HAV)"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Hepatită E",
+      "icd10": "B17.2",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "febra": 0.6,
+        "greata": 0.6,
+        "durere_abdominala": 0.5,
+        "galben_ochi": 0.5,
+        "urina_închisă": 0.4
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Dietă"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Analize de sânge (anti-HEV)"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Infecție cu citomegalovirus",
+      "icd10": "B25",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "febra": 0.6,
+        "ganglioni": 0.5,
+        "durere_musculare": 0.5,
+        "dureri_gat": 0.4
+      },
+      "treatments": [
+        "Antivirale",
+        "Repaus",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Infecție cu virus Epstein-Barr",
+      "icd10": "B27",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["teen", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.8,
+        "febra": 0.7,
+        "ganglioni": 0.6,
+        "dureri_gat": 0.6,
+        "erupții": 0.5
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Toxoplasmoză",
+      "icd10": "B58",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "oboseala": 0.7,
+        "febra": 0.6,
+        "ganglioni": 0.5,
+        "durere_musculare": 0.5,
+        "dureri_cap": 0.4
+      },
+      "treatments": [
+        "Antibiotice",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Infecție cu Clostridium difficile",
+      "icd10": "A04.7",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "febra": 0.6,
+        "durere_abdominala": 0.5,
+        "greata": 0.5
+      },
+      "treatments": [
+        "Antibiotice (Metronidazol, Vancomicină)",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Test pentru toxina C. difficile"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Infecție cu salmonella",
+      "icd10": "A02",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "febra": 0.7,
+        "durere_abdominala": 0.6,
+        "greata": 0.5,
+        "voma": 0.4
+      },
+      "treatments": [
+        "Hidratare",
+        "Antibiotice (în cazuri severe)"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Cultură de scaun"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Infecție cu E. coli",
+      "icd10": "A04",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "febra": 0.6,
+        "durere_abdominala": 0.5,
+        "greata": 0.4
+      },
+      "treatments": [
+        "Hidratare",
+        "Antibiotice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Cultură de scaun"
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Infecție cu Shigella",
+      "icd10": "A03",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "febra": 0.7,
+        "durere_abdominala": 0.6,
+        "sange_scaun": 0.5
+      },
+      "treatments": [
+        "Hidratare",
+        "Antibiotice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Cultură de scaun"
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Infecție cu Campylobacter",
+      "icd10": "A04.5",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "febra": 0.7,
+        "durere_abdominala": 0.6,
+        "greata": 0.5
+      },
+      "treatments": [
+        "Hidratare",
+        "Antibiotice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Cultură de scaun"
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Infecție cu Yersinia",
+      "icd10": "A04.6",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["child", "adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "diaree": 0.9,
+        "febra": 0.6,
+        "durere_abdominala": 0.5,
+        "greata": 0.4
+      },
+      "treatments": [
+        "Hidratare",
+        "Antibiotice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Cultură de scaun"
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Febra Q",
+      "icd10": "A78",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.6,
+        "durere_musculare": 0.6,
+        "oboseala": 0.5,
+        "durere_piept": 0.4
+      },
+      "treatments": [
+        "Antibiotice (Doxiciclină)",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Bruceloză",
+      "icd10": "A23",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "transpiratii": 0.7,
+        "durere_musculare": 0.6,
+        "oboseala": 0.6,
+        "durere_articulare": 0.5
+      },
+      "treatments": [
+        "Antibiotice",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Leptospiroză",
+      "icd10": "A27",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.7,
+        "durere_musculare": 0.6,
+        "greata": 0.5,
+        "galben_ochi": 0.4
+      },
+      "treatments": [
+        "Antibiotice",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 89,
+      "name": "Lyme",
+      "icd10": "A69.2",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "erupții": 0.8,
+        "febra": 0.6,
+        "dureri_cap": 0.6,
+        "durere_musculare": 0.5,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Antibiotice (Doxiciclină)",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Rickettsioză",
+      "icd10": "A79",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.7,
+        "erupții": 0.7,
+        "durere_musculare": 0.5,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Antibiotice (Doxiciclină)",
+        "Repaus"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Infecție cu virus Zika",
+      "icd10": "U06",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.7,
+        "dureri_cap": 0.6,
+        "erupții": 0.6,
+        "durere_musculare": 0.5,
+        "oboseala": 0.4
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 92,
+      "name": "Infecție cu chikungunya",
+      "icd10": "U04",
+      "specialty": "Boli Infecțioase",
+      "severity": 3,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "durere_articulare": 0.7,
+        "dureri_cap": 0.6,
+        "erupții": 0.5,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 93,
+      "name": "Infecție cu virus West Nile",
+      "icd10": "A92.3",
+      "specialty": "Boli Infecțioase",
+      "severity": 4,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.7,
+        "durere_musculare": 0.6,
+        "oboseala": 0.5,
+        "erupții": 0.4
+      },
+      "treatments": [
+        "Repaus",
+        "Hidratare",
+        "Antipiretice"
+      ],
+      "recommendations": [
+        "Consult infecționist",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 94,
+      "name": "Infecție cu hantavirus",
+      "icd10": "A98.5",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dificultati_respiratie": 0.7,
+        "dureri_cap": 0.6,
+        "durere_musculare": 0.5,
+        "oboseala": 0.5
+      },
+      "treatments": [
+        "Suport respirator",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Infecție cu virus Ebola",
+      "icd10": "A98.4",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "dureri_cap": 0.8,
+        "durere_musculare": 0.7,
+        "voma": 0.7,
+        "diaree": 0.6,
+        "hemoragii": 0.5
+      },
+      "treatments": [
+        "Suport medical",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 96,
+      "name": "Infecție cu virus Marburg",
+      "icd10": "A98.3",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.9,
+        "dureri_cap": 0.8,
+        "durere_musculare": 0.7,
+        "voma": 0.6,
+        "diaree": 0.5,
+        "hemoragii": 0.5
+      },
+      "treatments": [
+        "Suport medical",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 97,
+      "name": "Infecție cu virus Lassa",
+      "icd10": "A96.2",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.7,
+        "durere_musculare": 0.6,
+        "voma": 0.5,
+        "diaree": 0.4,
+        "hemoragii": 0.4
+      },
+      "treatments": [
+        "Suport medical",
+        "Hidratare"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 98,
+      "name": "Infecție cu virus Nipah",
+      "icd10": "U04",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.7,
+        "convulsii": 0.6,
+        "confuzie": 0.5,
+        "dificultati_respiratie": 0.5
+      },
+      "treatments": [
+        "Suport medical",
+        "Antivirale"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Infecție cu virus Hendra",
+      "icd10": "U04",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "dureri_cap": 0.7,
+        "convulsii": 0.6,
+        "confuzie": 0.5,
+        "dificultati_respiratie": 0.5
+      },
+      "treatments": [
+        "Suport medical",
+        "Antivirale"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Infecție cu virus MERS",
+      "icd10": "B34.2",
+      "specialty": "Boli Infecțioase",
+      "severity": 5,
+      "age_groups": ["adult", "elderly"],
+      "sex_specific": "both",
+      "symptoms": {
+        "febra": 0.8,
+        "tuse": 0.7,
+        "dificultati_respiratie": 0.7,
+        "oboseala": 0.6,
+        "durere_piept": 0.5
+      },
+      "treatments": [
+        "Suport respirator",
+        "Antivirale"
+      ],
+      "recommendations": [
+        "Urgență medicală",
+        "Teste serologice"
+      ]
     }
   ]
 }

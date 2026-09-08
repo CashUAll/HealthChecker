@@ -1,12 +1,13 @@
 """Fereastra principală a aplicației"""
 from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-    QPushButton, QFrame, QLineEdit
+    QPushButton, QFrame, QLineEdit, QProgressBar
 )
 from PySide6.QtCore import Qt
 
 from src.business.services.disease_service import DiseaseService
 from src.business.services.scoring_service import ScoringService
+from src.business.services.question_selector import QuestionSelector
 from src.data.repositories.symptom_repository import SymptomRepository
 from src.shared.constants import APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT
 
@@ -21,6 +22,9 @@ class MainWindow(QMainWindow):
         self.disease_service = DiseaseService()
         self.scoring_service = ScoringService()
         self.symptom_repo = SymptomRepository()
+
+        # Selector de întrebări (Akinator)
+        self.question_selector = None
 
         # Stare utilizator
         self.user_age = 0
@@ -113,6 +117,25 @@ class MainWindow(QMainWindow):
         self.question_widget.hide()
         question_layout = QVBoxLayout(self.question_widget)
         question_layout.setSpacing(15)
+
+        # Bară de progres
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setRange(0, 100)
+        self.progress_bar.setValue(0)
+        self.progress_bar.setStyleSheet("""
+            QProgressBar {
+                background-color: #1e1e2e;
+                border-radius: 8px;
+                height: 12px;
+                text-align: center;
+                color: #cdd6f4;
+            }
+            QProgressBar::chunk {
+                background-color: #89b4fa;
+                border-radius: 8px;
+            }
+        """)
+        question_layout.addWidget(self.progress_bar)
 
         self.question_label = QLabel("Apăsați Start pentru a începe")
         self.question_label.setObjectName("question")
@@ -224,33 +247,61 @@ class MainWindow(QMainWindow):
         self.current_question_index = 0
         self.questions = self.symptom_repo.get_questions()
 
+        # Inițializează selectorul Akinator
+        self.question_selector = QuestionSelector(self.questions)
+        self.question_selector.reset()
+
+        # Resetează bara de progres
+        self.progress_bar.setValue(0)
+
         self.start_btn.hide()
         self.yes_btn.show()
         self.no_btn.show()
         self.show_question()
 
     def show_question(self):
-        """Afișează următoarea întrebare"""
-        if self.current_question_index < len(self.questions):
-            self.question_label.setText(self.questions[self.current_question_index])
+        """Afișează următoarea întrebare (folosind algoritmul Akinator)"""
+        # Obține toate bolile relevante (filtrate după vârstă și sex)
+        diseases = self.disease_service.get_all()
+
+        # Alege următoarea întrebare inteligent
+        next_question = self.question_selector.select_next_question(
+            diseases, self.user_symptoms
+        )
+
+        if next_question:
+            self.question_label.setText(next_question)
         else:
             self.show_results()
 
+        # Actualizează bara de progres
+        total = len(self.questions)
+        answered = len(self.question_selector.asked_questions)
+        progress = int((answered / total) * 100) if total > 0 else 0
+        self.progress_bar.setValue(min(progress, 100))
+
     def answer_question(self, answer: bool):
         """Procesează răspunsul"""
-        if answer and self.current_question_index < len(self.questions):
-            from src.shared.helpers import extract_symptom_from_question
-            question = self.questions[self.current_question_index]
-            symptom = extract_symptom_from_question(question)
-            self.user_symptoms.append(symptom)
+        # Obține întrebarea curentă
+        current_question = self.question_label.text()
 
-        self.current_question_index += 1
+        if answer:
+            from src.shared.helpers import extract_symptom_from_question
+            symptom = extract_symptom_from_question(current_question)
+            if symptom not in self.user_symptoms:
+                self.user_symptoms.append(symptom)
+
+        # Marchează întrebarea ca fiind pusă
+        if current_question in self.questions:
+            self.question_selector.asked_questions.add(current_question)
+
         self.show_question()
 
     def show_results(self):
         """Afișează rezultatele"""
         self.yes_btn.hide()
         self.no_btn.hide()
+        self.progress_bar.setValue(100)
 
         diseases = self.disease_service.get_all()
         results = self.scoring_service.get_top_matches(diseases, self.user_symptoms)
@@ -261,7 +312,17 @@ class MainWindow(QMainWindow):
                 emoji = "🔴" if score > 70 else "🟡" if score > 40 else "🟢"
                 text += f"{i}. {emoji} {disease.name} - {score:.0f}%\n"
                 text += f"   Specialitate: {disease.specialty}\n\n"
-            text += "\n⚠️ Aceste rezultate sunt doar orientative.\n"
+                if hasattr(disease, 'treatments') and disease.treatments:
+                    text += f"   💊 Tratamente sugerate:\n"
+                    for treatment in disease.treatments[:2]:
+                        text += f"   • {treatment}\n"
+                    text += "\n"
+                if hasattr(disease, 'recommendations') and disease.recommendations:
+                    text += f"   📋 Recomandări:\n"
+                    for rec in disease.recommendations[:2]:
+                        text += f"   • {rec}\n"
+                    text += "\n"
+            text += "⚠️ Aceste rezultate sunt doar orientative.\n"
             text += "Consultați întotdeauna un medic pentru diagnostic!"
         else:
             text = "Nu am găsit potriviri exacte.\n"
