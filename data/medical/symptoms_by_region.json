@@ -1,0 +1,155 @@
+{
+  "head": {
+    "scalp": {
+      "symptoms": ["scalp pain", "hair loss", "scalp itching", "scalp redness", "scalp flaking"],
+      "diseases": {
+        "scalp pain": [
+          { "name": "Tension Headache", "treatments": ["Rest", "Pain relievers", "Stress management"], "specialty": "Neurology" },
+          { "name": "Scalp Psoriasis", "treatments": ["Topical corticosteroids", "Coal tar shampoo"], "specialty": "Dermatology" }
+        ],
+        "hair loss": [
+          { "name": "Alopecia Areata", "treatments": ["Steroid injections", "Minoxidil"], "specialty": "Dermatology" },
+          { "name": "Telogen Effluvium", "treatments": ["Stress management", "Iron supplements", "Balanced diet"], "specialty": "Dermatology" }
+        ],
+        "scalp itching": [
+          { "name": "Seborrheic Dermatitis", "treatments": ["Antifungal shampoo", "Topical steroids"], "specialty": "Dermatology" },
+          { "name": "Head Lice", "treatments": ["Permethrin lotion", "Fine-tooth comb"], "specialty": "Dermatology" }
+        ]
+      }
+    },
+    "forehead": {
+      "symptoms": ["headache", "fever", "dizziness", "forehead pressure", "forehead pain"],
+      "diseases": {
+        "headache": [
+          { "name": "Tension Headache", "treatments": ["Pain relievers", "Rest"], "specialty": "Neurology" },
+          { "name": "Sinusitis", "treatments": ["Decongestants", "Antibiotics if bacterial"], "specialty": "ENT" }
+        ],
+        "fever": [
+          { "name": "Viral Infection", "treatments": ["Rest", "Hydration", "Antipyretics"], "specialty": "General" },
+          { "name": "Influenza", "treatments": ["Antivirals", "Rest", "Fluids"], "specialty": "Infectious Diseases" }
+        ]
+      }
+    },
+    "eyes": {
+      "symptoms": ["red eyes", "itchy eyes", "watery eyes", "blurred vision", "eye pain", "sensitivity to light"],
+      "diseases": {
+        "red eyes": [
+          { "name": "Conjunctivitis", "treatments": ["Antibiotic drops", "Cold compresses"], "specialty": "Ophthalmology" },
+          { "name": "Dry Eye Syndrome", "treatments": ["Artificial tears", "Omega-3 supplements"], "specialty": "Ophthalmology" }
+        ],
+        "blurred vision": [
+          { "name": "Refractive Error", "treatments": ["Eyeglasses", "Contact lenses"], "specialty": "Ophthalmology" },
+          { "name": "Cataracts", "treatments": ["Surgery", "Intraocular lens"], "specialty": "Ophthalmology" }
+        ],
+        "eye pain": [
+          { "name": "Glaucoma", "treatments": ["Eye drops", "Laser therapy", "Surgery"], "specialty": "Ophthalmology" },
+          { "name": "Corneal Abrasion", "treatments": ["Antibiotic drops", "Eye patch"], "specialty": "Ophthalmology" }
+        ]
+      }
+    },
+    "nose": {
+      "symptoms": ["stuffy nose", "sneeze", "nosebleed", "nasal discharge", "loss of smell", "sinus pressure"],
+      "diseases": {
+        "stuffy nose": [
+          { "name": "Common Cold", "treatments": ["Decongestants", "Rest", "Fluids"], "specialty": "General" },
+          { "name": "Allergic Rhinitis", "treatments": ["Antihistamines", "Nasal steroids"], "specialty": "Allergy" }
+        ],
+        "nosebleed": [
+          { "name": "Dry Air", "treatments": ["Humidifier", "Saline spray"], "specialty": "ENT" },
+          { "name": "Hypertension", "treatments": ["Blood pressure control"], "specialty": "Cardiology" }
+        ]
+      }
+    },
+    "ears": {
+      "symptoms": ["ear pain", "hearing loss", "ringing in your ears", "ear discharge", "ear itching"],
+      "diseases": {
+        "ear pain": [
+          { "name": "Otitis Media", "treatments": ["Antibiotics", "Pain relievers"], "specialty": "ENT" },
+          { "name": "Otitis Externa", "treatments": ["Antibiotic drops", "Keep ear dry"], "specialty": "ENT" }
+        ],
+        "ringing in your ears": [
+          { "name": "Tinnitus", "treatments": ["Sound therapy", "Hearing aids", "Stress management"], "specialty": "ENT" }
+        ]
+      }
+    },
+    "mouth": {
+      "symptoms": ["sore throat", "difficulty swallowing", "hoarseness", "mouth ulcers", "dry mouth"],
+      "diseases": {
+        "sore throat": [
+          { "name": "Pharyngitis", "treatments": ["Antibiotics if bacterial", "Pain relievers", "Gargle salt water"], "specialty": "ENT" },
+          { "name": "Tonsillitis", "treatments": ["Antibiotics", "Pain relievers", "Surgery if recurrent"], "specialty": "ENT" }
+        ],
+        "hoarseness": [
+          { "name": "Laryngitis", "treatments": ["Voice rest", "Hydration", "Humidifier"], "specialty": "ENT" }
+        ]
+      }
+    }
+  },
+  "legs": {
+    "hips": {
+      "symptoms": ["hip pain", "hip stiffness", "limited movement", "pain when walking", "groin pain"],
+      "diseases": {
+        "hip pain": [
+          { "name": "Osteoarthritis", "treatments": ["NSAIDs", "Physical therapy", "Weight loss"], "specialty": "Orthopedics" },
+          { "name": "Bursitis", "treatments": ["Rest", "Ice", "NSAIDs", "Corticosteroid injections"], "specialty": "Orthopedics" }
+        ],
+        "hip stiffness": [
+          { "name": "Rheumatoid Arthritis", "treatments": ["DMARDs", "Biologics", "Physical therapy"], "specialty": "Rheumatology" }
+        ]
+      }
+    },
+    "knees": {
+      "symptoms": ["knee pain", "knee swelling", "knee stiffness", "clicking sound", "instability"],
+      "diseases": {
+        "knee pain": [
+          { "name": "Patellofemoral Syndrome", "treatments": ["Physical therapy", "Rest", "Ice"], "specialty": "Orthopedics" },
+          { "name": "Meniscus Tear", "treatments": ["Rest", "Ice", "Physical therapy", "Surgery"], "specialty": "Orthopedics" }
+        ],
+        "knee swelling": [
+          { "name": "Osteoarthritis", "treatments": ["NSAIDs", "Physical therapy", "Injections"], "specialty": "Orthopedics" }
+        ]
+      }
+    },
+    "ankles": {
+      "symptoms": ["ankle pain", "ankle swelling", "ankle stiffness", "instability", "bruising"],
+      "diseases": {
+        "ankle pain": [
+          { "name": "Ankle Sprain", "treatments": ["RICE (Rest, Ice, Compression, Elevation)", "Physical therapy"], "specialty": "Orthopedics" },
+          { "name": "Achilles Tendinitis", "treatments": ["Rest", "Ice", "Physical therapy", "Stretching"], "specialty": "Orthopedics" }
+        ]
+      }
+    }
+  },
+  "skin": {
+    "general_skin": {
+      "symptoms": ["skin rashes", "itchy skin", "dry skin", "acne", "hives", "skin redness", "blisters", "peeling skin"],
+      "diseases": {
+        "skin rashes": [
+          { "name": "Contact Dermatitis", "treatments": ["Avoid irritant", "Topical corticosteroids"], "specialty": "Dermatology" },
+          { "name": "Eczema", "treatments": ["Moisturizers", "Topical steroids", "Antihistamines"], "specialty": "Dermatology" }
+        ],
+        "itchy skin": [
+          { "name": "Urticaria", "treatments": ["Antihistamines", "Avoid triggers"], "specialty": "Dermatology" }
+        ],
+        "acne": [
+          { "name": "Acne Vulgaris", "treatments": ["Benzoyl peroxide", "Salicylic acid", "Antibiotics"], "specialty": "Dermatology" }
+        ]
+      }
+    }
+  },
+  "general": {
+    "whole_body": {
+      "symptoms": ["fever", "tired", "weight loss", "night sweats", "chills", "muscle aches", "anxious", "depressed"],
+      "diseases": {
+        "fever": [
+          { "name": "Influenza", "treatments": ["Antivirals", "Rest", "Fluids"], "specialty": "Infectious Diseases" },
+          { "name": "COVID-19", "treatments": ["Antivirals", "Rest", "Isolation"], "specialty": "Infectious Diseases" }
+        ],
+        "tired": [
+          { "name": "Anemia", "treatments": ["Iron supplements", "Dietary changes"], "specialty": "Hematology" },
+          { "name": "Hypothyroidism", "treatments": ["Levothyroxine"], "specialty": "Endocrinology" }
+        ]
+      }
+    }
+  }
+}

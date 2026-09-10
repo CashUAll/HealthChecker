@@ -1,9 +1,9 @@
-"""Modelul pentru o boală"""
-from typing import Dict, List, Optional, Tuple
+"""Disease model"""
+from typing import Dict, List, Optional
 
 
 class Disease:
-    """Model de business pentru o boală"""
+    """Business model for a disease"""
 
     def __init__(
             self,
@@ -14,8 +14,9 @@ class Disease:
             icd10_code: str = "",
             severity: int = 1,
             description: Optional[str] = None,
-            age_groups: List[str] = None,  # ["child", "adult", "elderly"]
-            sex_specific: str = "both"  # "male", "female", "both"
+            age_groups: List[str] = None,
+            sex_specific: str = "both",
+            category: str = "General"
     ):
         self.id = id
         self.name = name
@@ -25,10 +26,11 @@ class Disease:
         self.symptoms = symptoms
         self.description = description
         self.age_groups = age_groups or ["child", "teen", "adult", "elderly"]
-        self.sex_specific = sex_specific  # "male", "female", "both"
+        self.sex_specific = sex_specific
+        self.category = category
 
     def match_score(self, user_symptoms: List[str]) -> float:
-        """Calculează scorul de potrivire (0-100)"""
+        """Calculate match score (0-100)"""
         if not user_symptoms:
             return 0.0
 
@@ -44,21 +46,10 @@ class Disease:
         return min((matched_weight / total_weight) * 100, 100.0)
 
     def is_relevant_for(self, age: int, sex: str) -> bool:
-        """
-        Verifică dacă boala este relevantă pentru vârsta și sexul dat.
-
-        Args:
-            age: Vârsta utilizatorului
-            sex: "male" sau "female"
-
-        Returns:
-            True dacă boala este relevantă
-        """
-        # Verifică sexul
+        """Check if disease is relevant for the given age and sex"""
         if self.sex_specific != "both" and self.sex_specific != sex:
             return False
 
-        # Verifică grupa de vârstă
         from src.shared.constants import AGE_GROUPS
 
         user_group = None

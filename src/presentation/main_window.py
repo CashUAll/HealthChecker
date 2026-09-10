@@ -11,7 +11,7 @@ from src.business.services.scoring_service import ScoringService
 from src.business.services.question_selector import QuestionSelector
 from src.data.repositories.symptom_repository import SymptomRepository
 from src.shared.constants import (
-    APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT, BODY_REGIONS, REGION_SYMPTOMS
+    APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT, BODY_REGIONS, SUBREGION_SPECIALTIES
 )
 
 
@@ -604,6 +604,9 @@ class MainWindow(QMainWindow):
 
     # ---------- QUIZ ----------
     def start_quiz_for_subregion(self, subregion_id: str):
+        """Start the quiz for a specific sub-region with filtered diseases"""
+        from src.shared.constants import SUBREGION_SPECIALTIES
+
         self.selected_subregion = subregion_id
         self.subregion_widget.hide()
         self.question_widget.show()
@@ -618,32 +621,44 @@ class MainWindow(QMainWindow):
 
         self.user_symptoms = []
         self.current_question_index = 0
-        all_questions = self.symptom_repo.get_questions()
 
-        relevant_symptoms = REGION_SYMPTOMS.get(self.selected_subregion, [])
+        # Get the specialties for this sub-region
+        relevant_specialties = SUBREGION_SPECIALTIES.get(subregion_id, [])
 
-        region_names = {
-            "general_skin": "🔍 Skin symptoms",
-            "whole_body": "🔍 General symptoms (fever, fatigue, etc.)"
-        }
-        region_label = region_names.get(self.selected_subregion, "🔍 Symptoms")
+        # Filter diseases by specialty
+        all_diseases = self.disease_service.get_all()
+        filtered_diseases = []
 
-        if relevant_symptoms:
-            from src.shared.helpers import extract_symptom_from_question
-            filtered_questions = []
-            for q in all_questions:
-                symptom = q.replace("Aveți ", "").replace("?", "").strip().lower()
-                for relevant in relevant_symptoms:
-                    if relevant.lower() in symptom or symptom in relevant.lower():
-                        filtered_questions.append(q)
-                        break
+        for disease in all_diseases:
+            if disease.specialty in relevant_specialties:
+                filtered_diseases.append(disease)
+            elif hasattr(disease, 'category') and disease.category in relevant_specialties:
+                filtered_diseases.append(disease)
 
-            self.questions = filtered_questions if filtered_questions else all_questions
+        # If no diseases found, use all
+        if not filtered_diseases:
+            filtered_diseases = all_diseases
+
+        # Extract unique symptoms from filtered diseases
+        unique_symptoms = set()
+        for disease in filtered_diseases:
+            for symptom in disease.symptoms.keys():
+                unique_symptoms.add(symptom)
+
+        # Generate questions from these symptoms
+        if unique_symptoms:
+            questions = []
+            for symptom in sorted(unique_symptoms):
+                readable = symptom.replace("_", " ")
+                questions.append(f"Do you have {readable}?")
+            self.questions = questions
         else:
-            self.questions = all_questions
+            self.questions = self.symptom_repo.get_questions()
 
         if len(self.questions) > 30:
             self.questions = self.questions[:30]
+
+        region_label = f"🔍 Symptoms for {subregion_id.replace('_', ' ').title()}"
 
         self.question_label.setText(
             f"{region_label}\n"

@@ -215,3 +215,96 @@ REGION_SYMPTOMS = {
         "irritable", "excessive thirst", "frequent urination"
     ]
 }
+
+# Mapping between sub-regions and medical specialties
+SUBREGION_SPECIALTIES = {
+    "scalp": ["Dermatology", "Neurology"],
+    "forehead": ["Neurology", "ENT"],
+    "eyes": ["Ophthalmology"],
+    "nose": ["ENT", "Allergy"],
+    "ears": ["ENT"],
+    "face": ["ENT", "Dermatology"],
+    "mouth": ["ENT"],
+    "jaw": ["ENT"],
+    "front_neck": ["ENT", "Endocrinology"],
+    "back_neck": ["Orthopedics", "Neurology"],
+    "throat": ["ENT"],
+    "upper_chest": ["Pulmonology", "Cardiology"],
+    "lower_chest": ["Cardiology", "Gastroenterology"],
+    "breasts": ["Oncology", "Gynecology"],
+    "upper_abdomen": ["Gastroenterology"],
+    "lower_abdomen": ["Gastroenterology"],
+    "pelvis": ["Urology", "Gynecology"],
+    "upper_back": ["Orthopedics"],
+    "middle_back": ["Orthopedics"],
+    "lower_back": ["Orthopedics", "Neurology"],
+    "shoulders": ["Orthopedics"],
+    "upper_arms": ["Orthopedics"],
+    "elbows": ["Orthopedics"],
+    "forearms": ["Orthopedics"],
+    "wrists": ["Orthopedics"],
+    "hands": ["Orthopedics", "Neurology"],
+    "hips": ["Orthopedics", "Rheumatology"],
+    "thighs": ["Orthopedics"],
+    "knees": ["Orthopedics", "Rheumatology"],
+    "calves": ["Orthopedics"],
+    "ankles": ["Orthopedics"],
+    "feet": ["Orthopedics"],
+    "general_skin": ["Dermatology", "Allergy"],
+    "whole_body": ["General", "Infectious Diseases", "Hematology"],
+}
+
+# Mapping between sub-regions and medical specialties (only existing in diseases.json)
+SUBREGION_SPECIALTIES = {
+    # Head
+    "scalp": ["Dermatology", "Neurology"],
+    "forehead": ["Neurology"],
+    "eyes": ["Ophthalmology"],
+    "nose": ["Allergy"],
+    "ears": ["Neurology"],
+    "face": ["Dermatology"],
+    "mouth": ["Gastroenterology"],
+    "jaw": ["Neurology"],
+
+    # Neck
+    "front_neck": ["Endocrinology"],
+    "back_neck": ["Orthopedics", "Neurology"],
+    "throat": ["Pulmonology"],
+
+    # Chest
+    "upper_chest": ["Pulmonology", "Cardiology"],
+    "lower_chest": ["Cardiology", "Gastroenterology"],
+    "breasts": ["Oncology"],
+
+    # Abdomen
+    "upper_abdomen": ["Gastroenterology"],
+    "lower_abdomen": ["Gastroenterology"],
+    "pelvis": ["Urology"],
+
+    # Back
+    "upper_back": ["Orthopedics"],
+    "middle_back": ["Orthopedics"],
+    "lower_back": ["Orthopedics", "Neurology"],
+
+    # Arms
+    "shoulders": ["Orthopedics"],
+    "upper_arms": ["Orthopedics"],
+    "elbows": ["Orthopedics"],
+    "forearms": ["Orthopedics"],
+    "wrists": ["Orthopedics"],
+    "hands": ["Orthopedics", "Neurology"],
+
+    # Legs
+    "hips": ["Orthopedics"],
+    "thighs": ["Orthopedics"],
+    "knees": ["Orthopedics"],
+    "calves": ["Orthopedics"],
+    "ankles": ["Orthopedics"],
+    "feet": ["Orthopedics"],
+
+    # Skin
+    "general_skin": ["Dermatology", "Allergy"],
+
+    # General
+    "whole_body": ["Infectious Diseases", "Hematology", "Cardiology"],
+}
