@@ -23,6 +23,7 @@ class SymptomRepository:
                 data = json.load(f)
             self._questions = data.get("questions", [])
         except FileNotFoundError:
+            print(f"Fișierul {self.questions_path} nu există. Se creează date implicite.")
             self._create_default_data()
 
     def _create_default_data(self):
@@ -36,9 +37,16 @@ class SymptomRepository:
         ]
 
     def get_questions(self) -> List[str]:
+        """Returnează lista de întrebări"""
         return self._questions.copy()
 
     def get_question_by_index(self, index: int) -> Optional[str]:
+        """Returnează întrebarea de la indexul specificat"""
         if 0 <= index < len(self._questions):
             return self._questions[index]
         return None
+
+    def get_symptom_from_question(self, question: str) -> str:
+        """Extrage simptomul din textul întrebării"""
+        from src.shared.helpers import extract_symptom_from_question
+        return extract_symptom_from_question(question)

@@ -50,17 +50,13 @@ class DiseaseRepository:
                 id=1,
                 name="Gripă",
                 specialty="Boli Infecțioase",
-                symptoms={"febra": 0.9, "tuse": 0.8, "dureri_cap": 0.7, "oboseala": 0.8},
-                age_groups=["child", "teen", "adult", "elderly"],
-                sex_specific="both"
+                symptoms={"febra": 0.9, "tuse": 0.8, "dureri_cap": 0.7, "oboseala": 0.8}
             ),
             Disease(
                 id=2,
                 name="Răceală comună",
                 specialty="ORL",
-                symptoms={"nas_infundat": 0.9, "stranut": 0.8, "dureri_gat": 0.7},
-                age_groups=["child", "teen", "adult", "elderly"],
-                sex_specific="both"
+                symptoms={"nas_infundat": 0.9, "stranut": 0.8, "dureri_gat": 0.7}
             ),
         ]
 

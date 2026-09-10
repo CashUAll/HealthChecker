@@ -1,5 +1,5 @@
 """Selector inteligent de întrebări (stil Akinator)"""
-from typing import List, Dict, Set
+from typing import List, Set
 from src.business.models.disease import Disease
 
 
@@ -21,13 +21,6 @@ class QuestionSelector:
     ) -> str:
         """
         Alege întrebarea care elimină cele mai multe boli.
-
-        Strategia:
-        1. Pentru fiecare întrebare nepusă, calculează câte boli ar rămâne
-           dacă răspunsul este DA și câte dacă este NU.
-        2. Alege întrebarea care elimină cele mai multe boli (maximizează
-           numărul de boli eliminate).
-        3. Dacă nu mai sunt întrebări, returnează None.
         """
         if not possible_diseases:
             return None
@@ -36,14 +29,18 @@ class QuestionSelector:
         if len(possible_diseases) <= 3:
             return None
 
+        # Prioritizează întrebările care nu au fost încă puse
+        available = [q for q in self.all_questions if q not in self.asked_questions]
+        if not available:
+            return None
+
+        # Pentru performanță, limitează la primele 30 de întrebări
+        candidates = available[:30] if len(available) > 30 else available
+
         best_question = None
         best_eliminated = -1
 
-        for question in self.all_questions:
-            if question in self.asked_questions:
-                continue
-
-            # Simulează câte boli ar rămâne pentru răspuns DA
+        for question in candidates:
             symptom = self._extract_symptom(question)
             diseases_if_yes = self._count_diseases_with_symptom(
                 possible_diseases, symptom
@@ -51,7 +48,6 @@ class QuestionSelector:
             diseases_if_no = len(possible_diseases) - diseases_if_yes
 
             # Câte boli elimină această întrebare?
-            # Alegem minimul dintre DA și NU (cel mai rău caz)
             eliminated = min(diseases_if_yes, diseases_if_no)
 
             if eliminated > best_eliminated:
